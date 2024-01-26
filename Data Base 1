@@ -1,0 +1,17 @@
+// Connectez-vous à la base de données
+$db = new PDO("mysql:host=localhost;dbname=mon_site", "root", "");
+
+// Créez la base de données
+$db->query("CREATE DATABASE mon_site");
+
+// Sélectionnez la base de données
+$db->query("USE mon_site");
+
+// Créez les tables
+$db->query("CREATE TABLE utilisateurs (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nom VARCHAR(255) NOT NULL,
+  prenom VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL
+)");
